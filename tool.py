@@ -73,13 +73,6 @@ def telegram(client,claim,username):
     text = f"𝖭𝖾𝗐 𝗎𝖲𝖾𝗋 , 𝖺𝖡𝗈𝗈𝖣\nএ〔 𝖴𝗌𝖾𝗋𝖭𝖺𝗆𝖾 〕 : @{username} .\nএ〔 𝖢𝗅𝖺𝗂𝗆? 〕 {claim} .\nএ〔 𝖯𝗋𝗈𝖦𝗋𝖺𝗆𝗆𝖾𝗋 〕 : {me} ."
   client.send_message('me',text)
 def climed(client,username):
-    id = (
-      '7f784e64a41b31365e45f.mp4',
-      '986edfe7d6cf9ccb2cb8a.mp4',
-      '5fcbf5fad369ccc38976b.mp4',
-      '9e18e26f2ba65a5f826be.mp4',
-      '46301e4efcb3a2e281f79.mp4')
-    id = choice(id)
     result = client(functions.channels.CreateChannelRequest(
     title=f'এ〔 𝖢𝗅𝖺𝗂𝗆 〕|〔 {username} 〕',
         about=f'এ〔 𝖯𝗋𝗈𝖦𝗋𝖺𝗆𝗆𝖾𝗋 〕| {me}',
@@ -90,10 +83,10 @@ def climed(client,username):
         username=username))
         client(functions.channels.EditPhotoRequest(
         channel=username,
-        photo=client.upload_file(get("https://telegra.ph/file/23423b32334d1d4a70aad.jpg").content)))
+        photo=client.upload_file(get("https://telegra.ph/file/a584b674664a2bf717c45.jpg").content)))
         client.delete_messages(username, [client.get_messages(username, limit=1)[0]])
         with open('videoclaim.mp4','wb') as video :
-          video.write(get('https://telegra.ph/file/'+id).content)
+          video.write(get('https://telegra.ph/file/d9f03e3fe06f7baa29514.mp4.mp4).content)
           sleep(0.50)
         client.send_file(username, file='videoclaim.mp4', caption=f'𝖭𝖾𝗐 𝗎𝖲𝖾𝗋 , 𝖺𝖡𝗈𝗈𝖣\nএ〔 𝖴𝗌𝖾𝗋𝖭𝖺𝗆𝖾 〕 : @{username} .\nএ〔 𝖢𝗅𝖺𝗂𝗆 〕 : @{client.get_me().username}\nএ〔 𝖣𝖺𝗍𝖺 〕 : {datetime.now().strftime("%H:%M:%S")} .\nএ〔 𝖯𝗋𝗈𝖦𝗋𝖺𝗆𝗆𝖾𝗋 〕 : {me} .')
         return True
@@ -127,7 +120,7 @@ def usernameG():
   k = ''.join(choice('qwertyuiopasdfghjklzxcvbnm') for i in range(1))
   a = ''.join(choice('qwertyuiopasdfghjklzxcvbnm') for i in range(1))
   n = ''.join(choice('1234567890') for i in range(1))
-  return k+'_'+a+'_'+n
+  return k+'1'+'2'+'3'+'4'+'5'+'6'
 # start checking
 def start(client,username):
   try:ok = fragment(username)
